@@ -46,7 +46,33 @@ import org.xml.sax.SAXException;
  * Parser for HTML documents. 
  */
 public class HTMLDocumentParser implements DocumentParser {
-    private String pageKey = "Lifehacker";
+//    private String pageKey = "www.bbc.co.uk/news";
+//    private String pageKey = "www.guardian.co.uk";
+//    private String pageKey = "lifehacker";
+//    private String pageKey = "www.linuxinsider.com";
+//    private String pageKey = "www.javacodegeeks.com";
+//    private String pageKey = "blogspot.com";
+    // truthdig.com - too complicated
+    // ditto
+    // grinding.be - blog post and video content
+    // stackoverflow - too specific
+    // edinburgh jazz festival - too specific
+    // googlelabs.com - general list
+    // gothamist.com - dont think i visit it much
+    // buyteart.com - ditto 
+    // www.springsource.org  - flash but not much else
+    // ayende.com - too specific
+    // nosql nope
+    // indiangeek.net - too bloggy table
+    // delicious third party tools - not enough text - too out of date
+    
+    
+    
+    // 
+    
+    
+    
+    private String pageKey = "techcrunch.com";
     
     public ProcessedDocument parse(Reader reader) 
         throws HTMLDocumentParserException {
@@ -100,11 +126,17 @@ public class HTMLDocumentParser implements DocumentParser {
         remover.acceptElement("title", null);
         remover.acceptElement("body", null);            
         remover.acceptElement("div", new String[] { "class", "id" });
+        remover.acceptElement("span", new String[] { "class", "id" });
+        remover.acceptElement("ul", new String[] { "class", "id" });
+        remover.acceptElement("h1", new String[] { "class", "id" });
+        remover.acceptElement("h2", new String[] { "class", "id" });
+        remover.acceptElement("h3", new String[] { "class", "id" });
+        remover.acceptElement("section", new String[] { "class", "id" });
         remover.acceptElement("base", new String[] { "href" });
         remover.acceptElement("b", null);
         remover.acceptElement("i", null);
         remover.acceptElement("u", null);
-        remover.acceptElement("p", null);
+        remover.acceptElement("p", new String[] { "class", "id" });
         remover.acceptElement("br", null);
         remover.acceptElement("a", new String[] { "href", "rel" });
         // completely remove these elements

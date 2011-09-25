@@ -161,8 +161,12 @@ public class FetchAndProcessCrawler {
 //crawler.addUrl("http://www.bbc.co.uk/news/technology-14973447");
 //crawler.addUrl("http://localhost/technology-laser.html");
 //crawler.addUrl("http://localhost/google-plus.html");
-        crawler.addUrl("http://localhost/retro-game-arcade.html");
-
+//        crawler.addUrl("http://localhost/retro-game-arcade.html");        
+//        crawler.addUrl("http://localhost/linux-cars.html");
+//        crawler.addUrl("http://localhost/how-to-get-c-like-performance-in-java.html");
+//        crawler.addUrl("http://localhost/download-map-area-added-to-labs-in.html");     
+        crawler.addUrl("http://localhost/GoogleMapsForAndroidTechCrunch.html");     
+     
 //        .setDefaultUrls(); 
         crawler.run();
     }
