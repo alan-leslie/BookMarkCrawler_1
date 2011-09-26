@@ -5,6 +5,8 @@ import bookmarkcrawler.model.Outlink;
 import bookmarkcrawler.model.ProcessedDocument;
 import bookmarkcrawler.parser.common.DocumentParser;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import static org.w3c.dom.Node.ATTRIBUTE_NODE;
 import static org.w3c.dom.Node.CDATA_SECTION_NODE;
 import static org.w3c.dom.Node.COMMENT_NODE;
@@ -72,20 +74,20 @@ public class HTMLDocumentParser implements DocumentParser {
     
     
     
-    private String pageKey = "techcrunch.com";
+    private String pageKey = "";
     
-    public ProcessedDocument parse(Reader reader) 
-        throws HTMLDocumentParserException {
-        
-        ProcessedDocument htmlDoc = new ProcessedDocument();
-        htmlDoc.setDocumentType(ProcessedDocument.DOCUMENT_TYPE_HTML);
-        htmlDoc.setDocumentId(null);
-        htmlDoc.setDocumentURL(null);
-        InputSource inputSource = new InputSource();
-        inputSource.setCharacterStream(reader);
-        parseHTML(htmlDoc, inputSource);
-        return htmlDoc;
-    }
+//    public ProcessedDocument parse(Reader reader) 
+//        throws HTMLDocumentParserException {
+//        
+//        ProcessedDocument htmlDoc = new ProcessedDocument();
+//        htmlDoc.setDocumentType(ProcessedDocument.DOCUMENT_TYPE_HTML);
+//        htmlDoc.setDocumentId(null);
+//        htmlDoc.setDocumentURL(null);
+//        InputSource inputSource = new InputSource();
+//        inputSource.setCharacterStream(reader);
+//        parseHTML(htmlDoc, inputSource);
+//        return htmlDoc;
+//    }
     
     public ProcessedDocument parse(FetchedDocument doc) 
         throws HTMLDocumentParserException {
@@ -93,6 +95,14 @@ public class HTMLDocumentParser implements DocumentParser {
         htmlDoc.setDocumentType(ProcessedDocument.DOCUMENT_TYPE_HTML);
         htmlDoc.setDocumentId(doc.getDocumentId());
         htmlDoc.setDocumentURL(doc.getDocumentURL());
+        
+        try {
+            URL theURL = new URL(doc.getDocumentURL());
+            pageKey = theURL.getHost();
+        } catch (MalformedURLException ex) {
+            Logger.getLogger(HTMLDocumentParser.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
         String documentCharset = doc.getContentCharset();
         InputStream contentBytes = new ByteArrayInputStream(doc.getDocumentContent());
         try {

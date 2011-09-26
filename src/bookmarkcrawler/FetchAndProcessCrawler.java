@@ -156,8 +156,11 @@ public class FetchAndProcessCrawler {
         return crawlData;
     }
 
-    public static void main(String[] args) {
-        FetchAndProcessCrawler crawler = new FetchAndProcessCrawler("/home/al/lasers", 1, 20);
+    public static void main(String[] args) { 
+        FetchAndProcessCrawler crawler = new FetchAndProcessCrawler("/home/al/lasers", 2, 200);
+crawler.addUrl("http://localhost/bookmarks_adjusted.html");
+//crawler.addUrl("http://lifehacker.com/5835369/how-do-i-securely-wipe-a-computer-before-donating-it-to-charity");
+
 //crawler.addUrl("http://www.bbc.co.uk/news/technology-14973447");
 //crawler.addUrl("http://localhost/technology-laser.html");
 //crawler.addUrl("http://localhost/google-plus.html");
@@ -165,7 +168,7 @@ public class FetchAndProcessCrawler {
 //        crawler.addUrl("http://localhost/linux-cars.html");
 //        crawler.addUrl("http://localhost/how-to-get-c-like-performance-in-java.html");
 //        crawler.addUrl("http://localhost/download-map-area-added-to-labs-in.html");     
-        crawler.addUrl("http://localhost/GoogleMapsForAndroidTechCrunch.html");     
+//        crawler.addUrl("http://localhost/GoogleMapsForAndroidTechCrunch.html");     
      
 //        .setDefaultUrls(); 
         crawler.run();

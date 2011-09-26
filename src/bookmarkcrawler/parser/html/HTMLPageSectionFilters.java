@@ -53,7 +53,7 @@ public class HTMLPageSectionFilters {
         theLinkFilter.addAccept(theRelatedLinkSection);
         theLinkFilter.addSkip(theSkipSection);
         
-        addFilter("BBC", theBodyFilter, theLinkFilter);
+        addFilter("www.bbc.co.uk", theBodyFilter, theLinkFilter);
         
         theBodyFilter = new SectionFilter();
         theAcceptSection = new SectionFilterSpec("div", "id", "main-article-info", NodeFilter.FILTER_ACCEPT);
@@ -71,7 +71,7 @@ public class HTMLPageSectionFilters {
         theAcceptSection = new SectionFilterSpec("div", "class", "related-content", NodeFilter.FILTER_ACCEPT);
         theLinkFilter.addAccept(theAcceptSection);
          
-        addFilter("Guardian", theBodyFilter, theLinkFilter);
+        addFilter("www.guardian.co.uk", theBodyFilter, theLinkFilter);
         
         theBodyFilter = new SectionFilter();
         theAcceptSection = new SectionFilterSpec("div", "class", "post-body", NodeFilter.FILTER_ACCEPT);
@@ -83,7 +83,7 @@ public class HTMLPageSectionFilters {
         theAcceptSection = new SectionFilterSpec("ul", "class", "related", NodeFilter.FILTER_ACCEPT);
         theLinkFilter.addAccept(theAcceptSection);
         
-        addFilter("Lifehacker", theBodyFilter, theLinkFilter);
+        addFilter("lifehacker.com", theBodyFilter, theLinkFilter);
         
         theBodyFilter = new SectionFilter();
         theAcceptSection = new SectionFilterSpec("h1", "class", "title", NodeFilter.FILTER_ACCEPT);
@@ -219,7 +219,7 @@ public class HTMLPageSectionFilters {
         theBodyFilter.addAccept(theAcceptSection);
         
         theLinkFilter = new SectionFilter();
-        theAcceptSection = new SectionFilterSpec("div", "class", "Superfish-wrapn", NodeFilter.FILTER_ACCEPT);
+        theAcceptSection = new SectionFilterSpec("div", "class", "Superfish-wrap", NodeFilter.FILTER_ACCEPT);
         theLinkFilter.addAccept(theAcceptSection);
         
         addFilter("reference.sitepoint.com", theBodyFilter, theLinkFilter);  
@@ -319,11 +319,11 @@ public class HTMLPageSectionFilters {
         addFilter("technologytosoftware.com", theBodyFilter, theLinkFilter);  
                                      
         theBodyFilter = new SectionFilter();
-        theAcceptSection = new SectionFilterSpec("section", "class",  "entry", NodeFilter.FILTER_ACCEPT);
+        theAcceptSection = new SectionFilterSpec("div", "class",  "entry", NodeFilter.FILTER_ACCEPT);
         theBodyFilter.addAccept(theAcceptSection);
         
         theLinkFilter = new SectionFilter();
-        theAcceptSection = new SectionFilterSpec("section", "class", "entry", NodeFilter.FILTER_ACCEPT);
+        theAcceptSection = new SectionFilterSpec("div", "class", "entry", NodeFilter.FILTER_ACCEPT);
         theLinkFilter.addAccept(theAcceptSection);
         
         addFilter("skytechgeek.com", theBodyFilter, theLinkFilter);  
@@ -381,11 +381,11 @@ public class HTMLPageSectionFilters {
         addFilter("www.webdeveloperjuice.com", theBodyFilter, theLinkFilter);       
  
         theBodyFilter = new SectionFilter();
-        theAcceptSection = new SectionFilterSpec("div", "id", "contentadcontainer", NodeFilter.FILTER_ACCEPT);
+        theAcceptSection = new SectionFilterSpec("div", "class", "post", NodeFilter.FILTER_ACCEPT);
         theBodyFilter.addAccept(theAcceptSection);
         
         theLinkFilter = new SectionFilter();
-        theAcceptSection = new SectionFilterSpec("div", "id",  "contentadcontainer", NodeFilter.FILTER_ACCEPT);
+        theAcceptSection = new SectionFilterSpec("div", "class",  "post", NodeFilter.FILTER_ACCEPT);
         theLinkFilter.addAccept(theAcceptSection);
         
         addFilter("www.noupe.com", theBodyFilter, theLinkFilter);       
@@ -421,11 +421,11 @@ public class HTMLPageSectionFilters {
         addFilter("stefancameron.com", theBodyFilter, theLinkFilter);    
  
         theBodyFilter = new SectionFilter();
-        theAcceptSection = new SectionFilterSpec("div", "class", "dd_post_share", NodeFilter.FILTER_ACCEPT);
+        theAcceptSection = new SectionFilterSpec("div", "class", "entry-content", NodeFilter.FILTER_ACCEPT);
         theBodyFilter.addAccept(theAcceptSection);
         
         theLinkFilter = new SectionFilter();
-        theAcceptSection = new SectionFilterSpec("div", "class", "dd_post_share", NodeFilter.FILTER_ACCEPT);
+        theAcceptSection = new SectionFilterSpec("div", "class", "entry-content", NodeFilter.FILTER_ACCEPT);
         theLinkFilter.addAccept(theAcceptSection);
         
         addFilter("creativedesignmagazine.com", theBodyFilter, theLinkFilter); 
