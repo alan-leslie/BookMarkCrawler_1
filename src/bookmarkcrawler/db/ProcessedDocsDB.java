@@ -92,6 +92,7 @@ public class ProcessedDocsDB {
                 /* load all existing file groups */                
                 File[] existingFileGroups = 
                     rootDirFile.listFiles( new FileFilter() {
+                    @Override
                         public boolean accept(File f) {
                             return f.isDirectory();
                         } });

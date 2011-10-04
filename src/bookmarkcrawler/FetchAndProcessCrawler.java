@@ -158,6 +158,7 @@ public class FetchAndProcessCrawler {
 
     public static void main(String[] args) { 
         FetchAndProcessCrawler crawler = new FetchAndProcessCrawler("/home/al/lasers", 2, 200);
+//crawler.addUrl("file:///home/al/newsdocs.html");
 crawler.addUrl("http://localhost/bookmarks_adjusted.html");
 //crawler.addUrl("http://lifehacker.com/5835369/how-do-i-securely-wipe-a-computer-before-donating-it-to-charity");
 
