@@ -1,7 +1,13 @@
 package bookmarkcrawler.parser.html;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.text.ParseException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.w3c.dom.traversal.NodeFilter;
 
 /**
@@ -599,5 +605,81 @@ public class HTMLPageSectionFilters {
     
     private static class HTMLPageSectionFiltersHolder {
         private static final HTMLPageSectionFilters INSTANCE = new HTMLPageSectionFilters();
+    }
+    
+    private SectionFilter initBodyFilter() {
+        SectionFilter theBodyFilter = new SectionFilter();
+
+        FileReader theReader = null;
+
+        try {
+            theReader = new FileReader("BodyFilters.txt");
+            BufferedReader in = new BufferedReader(theReader);
+            
+            String theLine = null;
+            
+            while ((theLine = in.readLine()) != null) {
+                String theLineArr[] = theLine.split(",");
+                
+                if(theLineArr.length > 3){
+//        SectionFilterSpec theSkipSection = new SectionFilterSpec("div", "class", "share-help", NodeFilter.FILTER_SKIP);
+//        theBodyFilter.addAccept(theAcceptSection);
+//        theBodyFilter.addSkip(theSkipSection);
+//                    try {
+//                    } catch (ParseException ex) {
+//                        Logger.getLogger(HTMLPageSectionFilters.class.getName()).log(Level.SEVERE, null, ex);
+//                    }       
+                }
+            }
+
+        } catch (IOException e) {
+            // ...
+        } finally {
+            if (null != theReader) {
+                try {
+                    theReader.close();
+                } catch (IOException e) {
+                    /* .... */
+                }
+            }
+        }
+        
+        return theBodyFilter;
+    }
+    
+    private SectionFilter initLinkFilter() {
+        SectionFilter theLinkFilter = new SectionFilter();
+        
+        FileReader theReader = null;
+
+        try {
+            theReader = new FileReader("LinkFilters.txt");
+            BufferedReader in = new BufferedReader(theReader);
+            
+            String theLine = null;
+            
+            while ((theLine = in.readLine()) != null) {
+                String theLineArr[] = theLine.split(",");
+                
+                if(theLineArr.length > 3){
+//                    try {
+//                    } catch (ParseException ex) {
+//                        Logger.getLogger(HTMLPageSectionFilters.class.getName()).log(Level.SEVERE, null, ex);
+//                    }       
+                }
+            }
+        } catch (IOException e) {
+            // ...
+        } finally {
+            if (null != theReader) {
+                try {
+                    theReader.close();
+                } catch (IOException e) {
+                    /* .... */
+                }
+            }
+        }
+        
+        return theLinkFilter;
     }
 }
