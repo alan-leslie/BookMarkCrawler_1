@@ -16,13 +16,38 @@ class SectionFilter implements NodeFilter {
     private List<SectionFilterSpec> skipList;
     private List<SectionFilterSpec> acceptList;
     private List<NodeFilter> acceptFilters = new ArrayList<NodeFilter>();
-
+    
     public SectionFilter() {
         skipList = new ArrayList<SectionFilterSpec>();
         acceptList = new ArrayList<SectionFilterSpec>();
     }
 
-    public short acceptNode(Node theNode) {
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final SectionFilter other = (SectionFilter) obj;
+        if (this.skipList != other.skipList && (this.skipList == null || !this.skipList.equals(other.skipList))) {
+            return false;
+        }
+        if (this.acceptList != other.acceptList && (this.acceptList == null || !this.acceptList.equals(other.acceptList))) {
+            return false;
+        }
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        return hash;
+    }
+
+     public short acceptNode(Node theNode) {
         short result = FILTER_ACCEPT;
         boolean elementFound = false;
 
