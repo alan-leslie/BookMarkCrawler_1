@@ -8,11 +8,10 @@ www.linuxinsider.com,span,class,story-storytype,A
 www.linuxinsider.com,p,class,story-summary,A
 www.linuxinsider.com,div,class,story-body,A
 www.javacodegeeks.com,div,class,post-body entry-content,A
-google-latlong.blogspot.com,div,class,post-body,A
 techcrunch.com,div,class,body-copy,A
 seleniumhq.wordpress.com,div,class,storycontent,A
 www.gamasutra.com,div,class,adBox,A
-openmymind.net,div,class,section,A
+openmymind.net,div,id,post,A
 en.wikipedia.org,div,id,bodyContent,A
 zoomzum.com,div,class,postItem,A
 www.time.com,div,id,content,A
@@ -28,6 +27,7 @@ designmodo.com,div,class,article-single,A
 www.catswhocode.com,section,id,main-content,A
 www.catswhocode.com,div,id,comments,S
 technologytosoftware.com,section,class,entry-content,A
+skytechgeek.com,div,class,entry,A
 skytechgeek.com,section,class,entry,A
 appole.org,div,class,entry_content,A
 games.yahoo.com,div,class,yom-mod yom-art-hd,A
