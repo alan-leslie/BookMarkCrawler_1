@@ -1,0 +1,9 @@
+Java program to crawl web pages that are marked as bookmarks.
+
+Using code from the books:
+algorithms of the intelligent web - ISBN: 1933988665
+
+Adapted to only extract (to skip or to only include) certain sections from the page. 
+work with web page data created by BookMarkCrawler 
+
+Note: built with netbeans.
